@@ -31,8 +31,25 @@ public class Users {
 	// Prints users method
 	public void printUsers(){
 		for (int i=0; i<users.length; i++) {
+						
+			if(null== this.users[i]) {
+				//continues to next iteration, like break
+				continue;
+			}
 			System.out.println(this.users[i]);
 		}
+	}
+	
+	//Finds email 
+	public boolean foundMatch(String input) {
+		for (int i=0; i<users.length; i++) {
+			if(null== this.users[i]) {
+				continue;
+			}
+			if(this.users[i].equalsIgnoreCase(input)) {
+				return true;
+			} 
+		}return false;
 	}
 	
 }

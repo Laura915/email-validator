@@ -1,20 +1,31 @@
 package emailvalidator;
 
+import java.util.Scanner;
+
 public class EmailFinder {
 
 	public static void main(String[] args) {
-		Users currUsers = new Users (5);
-		currUsers.addUser("Maria@ex.com");
-		currUsers.addUser("Luz@ex.com");
-		currUsers.addUser("tom@ex.com");
-		currUsers.addUser("Jose@ex.com");
-		currUsers.addUser("pepita@ex.com");
+		//Users IDs		
+		Users currUsers = new Users (20);
+		currUsers.addUser("Maria");
+		currUsers.addUser("Luz");
+		currUsers.addUser("tom");
+		currUsers.addUser("Jose");
+		currUsers.addUser("pepita");
+				
+		System.out.println("Provide a name to search for");
+		Scanner scanner = new Scanner (System.in);
+		String searchFor= scanner.nextLine();
 		
-		//Print Users
-		currUsers.printUsers();
-		
-		
-		
+		//Find a match
+		boolean foundMatch = currUsers.foundMatch(searchFor);
+		if (foundMatch) {
+			System.out.println(searchFor +" is indeed a user");		
+			
+		}else {
+			System.out.println(searchFor +" is not a user");	
+		}	
+			
 	}
 
 }
